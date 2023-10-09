@@ -58,7 +58,7 @@ if (mail.length === 0) {
 // object empty check
 const obj = {}
 
-if(Object.keys(obj).length ==== 0){
+if(Object.keys(obj).length === 0){
     console.log("empty");
 }
 
