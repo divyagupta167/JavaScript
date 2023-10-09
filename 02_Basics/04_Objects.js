@@ -58,28 +58,56 @@ const users = [
         name:'divya'
     },
     {
-        id:1,
+        id:2,
         name:'divya'
     },
     {
-        id:1,
+        id:3,
         name:'divya'
     },
     {
-        id:1,
+        id:4,
         name:'divya'
     }
 ]
 
 
-user[1].email
+users[1].email
 
 console.log(tinderUser);
 
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
+console.log(Object.keys(tinderUser)); // returns array datatype 
+console.log(Object.values(tinderUser)); 
 console.log(Object.entries(tinderUser));
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn'));
 
 
+//Destructuring
+
+const course = {
+    name:"javascript",
+    price:"999",
+    teacher:"sir"
+}
+
+const {name, price, teacher}=course
+
+const {name:instructor}=course
+
+//react destructuring
+const navbar =({company})=>{
+  
+}
+navbar(company = "divya")
+
+//API's
+//JSON => { }
+// {
+//     'name':"javascript",
+//     'price':"999",
+//     'teacher':"sir"
+// }
+
+// Array => [{},{},{}]
+// randomuserme api
