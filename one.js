@@ -1,5 +1,8 @@
 /*
 
+js engine is single threaded but along with web apis of browser it is 
+very powerful
+
 //Default Javascript
 Javascript 
         --> synchronous and single threaded
