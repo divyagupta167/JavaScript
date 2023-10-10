@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: black;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="box" >
+        <h1 id="title" class="heading">DOM Learning</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, aliquid.</p>
+
+    </div>
+    <ul>
+        <li class="list-item ">one</li>
+        <li class="list-item ">two</li>
+        <li class="list-item ">three</li>
+    </ul>
+</body>
+
+<script >
+
+   // Intro
+    console.log(window); //window object
+    console.log(document); // document of window
+    console.dir(document)
+
+
+    // DOM Tree
+    //  window -> Document -> HTML
+    //  HTML has head and body
+    //  head has title and meta , title has textnode, meta has attribute
+    //  body -> div has h1 and p and a attribute, h1 has attribute and text node,p has textnode
+
+    // in a webpage page we can do the below, which returns a HTML coollection
+    console.log(document.baseURI); // basic url
+    console.log(document.links); // all links
+
+
+    // DOM Selectors
+    document.getElementById('title')  // gives h1 tag
+    document.getElementById('title').id 
+    document.getElementById('title').className 
+    document.getElementById('title').getAttribute('class')
+    document.getElementById('title').getAttribute('id')
+    document.getElementById('title').setAttribute('id','test')
+
+    // styele in DOM
+    const title =  document.getElementById('title') 
+    title.style.backgroundColor='green'
+    title.style.padding="15px"
+    title.style.borderRadius="15px"
+
+    // getting values of html tag
+    title.textContent // gives content
+    title.innerHTML // gives content
+    title.innerText // gives content
+
+    // difference bwtween innertext and innercontent
+    // inner text displays all the content which is visible in the webpage
+    // inner content displays the content, which is even hidden and not displayed in the webpage
+
+    // innerHTML gives the content along with any html tag present in it, as it is
+
+
+    document.getElementsByClassName('heading')
+
+    // Important
+    document.querySelector('h1')// gives first h1
+    document.querySelector('#title')
+    document.querySelector('.heading')
+    document.querySelector('input[type="password"]')
+    document.querySelector('p:first-child')
+
+    // for lists
+    const myul = document.querySelector('ul')
+    const myul2 = document.querySelector('li')
+    myul2.style.backgroundColor ="green"
+    myul2.innerText ="five"
+    
+
+    //querselectorall
+    // querselector all returns a dataype of nodelist
+
+    const tempLi = document.querySelectorAll('li') //gives nodelist 
+    
+    // node list and html collections are mot pure array,similar to array
+
+    tempLi.style.backgroundColor ='purple' // gives error
+    tempLi[0].style.backgroundColor ='purple' // works fine
+
+
+    const myH1 = document.querySelectorAll('h1') // nodelist
+
+    myH1[0].style.color = 'orange'
+
+
+    // iterating nodelist
+    tempLi.forEach((item)=>{
+        return item.style.backgroundColor='pink'
+    })
+
+
+    // getElementsByClassName returns a datatype of HTML collection
+    const tempClass = document.getElementsByClassName('list-item')
+   
+    // to iterate we always have to convert it to array
+
+    const myConvertedArray = Array.from(tempClass)
+
+    myConvertedArray.forEach((item)=>{
+        return item.style.color='maroon'
+    })
+
+
+
+
+
+
+
+
+</script>
+</html>
+
+
+
+
