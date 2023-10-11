@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+
+<body>
+    <h2>Images</h2>
+    <div>
+        <ul class="images">
+            <li><img src="" alt="photoshop"></li>
+            <li><img src="" alt="japan"></li>
+            <li><img src="" alt="owl"></li>
+            <li><img src="" alt="prayer"></li>
+        </ul>
+    </div>
+
+</body>
+<script>
+
+    //attachEvent() --> used previously, internet explorer time
+    //jOquery --> onEventListeners
+
+    //1st way
+    // we can simply add onclick in the html tag itself
+
+
+    // 2nd way , by creating a separate function
+    document.getElementById('owl').onclick = function () {
+        alert("owl clicked")
+    }
+
+    /// 3rd, by using event listeners
+    // here a third parameter is also present, but it is default false ,
+    // so we dont write it
+    document.getElementById('owl').addEventListener('click', function () {
+        alert("owl clicked again")
+    }, false)
+
+
+    //Event objects, here 'e'
+    document.getElementById('owl').addEventListener('click', function (e) {
+        console.log(e);
+    })
+
+    // to learn
+    // type,timestamp,defaultPrevented
+    // target,toElement,srcElement,currentTarget
+    // clientX,clientY,screenX,screenY
+    // altkey,ctrlkey,shiftkey,keyCode
+
+
+    //Event Propagation -> 
+    // true --> event capturing,reflect outer tag, then inner tag
+    // false --> event bubblinng,reflect inner first then outer element
+
+    // since owl is inside ul, if use false, then click owl, 'clicked owl'
+    // will be printed then 'clicked inside ul'
+    // but if we use true, prints  'clicked inside ul' first then 'clicked owl'
+
+    document.getElementById('images').addEventListener('click', function (e) {
+        console.log('clicked inside ul');
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function (e) {
+        console.log('clicked owl');
+    }, false)
+
+
+    // to stop bubbling
+    document.getElementById('owl').addEventListener('click', function (e) {
+        console.log('clicked owl');
+        e.stopPropagation()
+    }, false)
+
+    //prevent default
+    document.getElementById('google').addEventListener('click',
+        function (e) {
+            e.preventDefault()
+        }
+    )
+
+
+    // to remove element
+    // events spillover
+    // e.target.parentNode --. gives li
+    document.querySelector('#images').addEventListener('click',
+        function (e) {
+            console.log(e.target.parentNode);
+
+            if (e.target.tagName === 'IMG') {
+                let removeIT = e.target.parentNode;
+                // removeIT.remove()
+                //OR
+                removeIT.parentNode.removeChild(removeIT)
+            }
+        })
+
+
+
+
+
+
+
+
+</script>
+
+</html>
