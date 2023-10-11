@@ -20,6 +20,18 @@ Execution context
 1.Blocking -> block the flow of program(read file Sync)
 2.Non-Blocking ->does not block the flow of program(Read file Async)
 
+javascript is syhnoronous
+
+javascript with setinterval and settimeout is asyhnorous
+
+javscript with api is async
+
+javascript default engine is sync
+
+but javascript with its runtime is async
+
+
+
 
 
 
