@@ -134,3 +134,15 @@ Copy code
 const myArray = [3, 1, 4, 1, 5, 9, 2, 6];
 myArray.sort(); // myArray is now [1, 1, 2, 3, 4, 5, 6, 9]
 Remember, when using these methods, you're directly modifying the original array. If you want to avoid modifying the original array, you can create a copy of it using methods like slice() or spread syntax ([...myArray]) and then perform the desired operations on the copy.
+
+
+![Screenshot (90)](https://github.com/divyagupta167/JavaScript/assets/54738711/23e7c2bf-f701-43a0-ae70-2d8a12ef15f8)
+
+![Screenshot (92)](https://github.com/divyagupta167/JavaScript/assets/54738711/113dfffa-62a3-4696-b538-2caddca6a723)
+
+![Screenshot (97)](https://github.com/divyagupta167/JavaScript/assets/54738711/31134307-761e-42fc-822b-ad97beeb5868)
+
+![Screenshot (100)](https://github.com/divyagupta167/JavaScript/assets/54738711/8243711c-1a98-4438-b84e-8a7b84a0f3fe)
+
+![Screenshot (101)](https://github.com/divyagupta167/JavaScript/assets/54738711/7d1c8566-4d16-4db2-b2e2-bd413db8140b)
+
